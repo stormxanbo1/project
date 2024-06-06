@@ -416,5 +416,12 @@ public class DataAccessLayer {
         List<Review> resultList = session.createQuery(query).getResultList();
         return resultList;
     }
+    public List<Basket> getBasketsByUserId(Long userId) {
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        return session.createQuery("SELECT b FROM Basket b WHERE b.user.id = :userId", Basket.class)
+                .setParameter("userId", userId)
+                .getResultList();
+    }
 
 }

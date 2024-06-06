@@ -87,4 +87,14 @@ public class SecurityController {
         dataAccessLayer.createDiscount(discount);
         return ResponseEntity.ok("Discount added successfully!");
     }
+
+    @GetMapping("/get/baskets/{userId}")
+    public ResponseEntity<List<Basket>> getBasketsByUserId(@PathVariable("userId") long userId) {
+        return ResponseEntity.ok(dataAccessLayer.getBasketsByUserId(userId));
+    }
+    @PostMapping("/create/basket")
+    public ResponseEntity<String> createUser(@RequestBody Basket basket) {
+        dataAccessLayer.createBasket(basket);
+        return ResponseEntity.ok("Basket added successfully!");
+    }
 }

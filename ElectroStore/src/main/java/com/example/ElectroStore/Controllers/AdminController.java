@@ -39,11 +39,6 @@ public class AdminController {
         dataAccessLayer.updateUser(id, updatedUser);
         return ResponseEntity.ok("User updated successfully!");
     }
-    @PostMapping("/create/basket")
-    public ResponseEntity<String> createUser(@RequestBody Basket basket) {
-        dataAccessLayer.createBasket(basket);
-        return ResponseEntity.ok("Basket added successfully!");
-    }
     @DeleteMapping("/delete/basket/{id}")
     public ResponseEntity deleteBasketById(@PathVariable("id") long id){
         dataAccessLayer.deleteBasketById(id);
