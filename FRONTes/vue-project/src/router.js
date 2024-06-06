@@ -17,6 +17,6 @@ export default createRouter({
     { path: '/cart', component: Cart },
     { path: '/product/:id', component: Product },
     { path: '/profile', component: Profile },
-    { path: '/order', component: Order }
+    { path: '/order/:orderId', component: Order }
   ],
 });

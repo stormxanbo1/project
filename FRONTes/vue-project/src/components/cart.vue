@@ -9,9 +9,9 @@
       <div class="basket-item" v-for="(item, index) in basketItems" :key="index">
         <div>
           <h3>{{ item.product.name }}</h3>
-          <p>Company: {{ item.product.company }}</p>
-          <p>Price: {{ item.product.price }}</p>
-          <p>Description: {{ item.product.description }}</p>
+          <p>Производитель: {{ item.product.company }}</p>
+          <p>Цена: {{ item.product.price }}</p>
+          <p>Описание: {{ item.product.description }}</p>
         </div>
       </div>
       <button @click="createOrder">Оформить заказ</button>
@@ -67,7 +67,6 @@ export default {
         const response = await Api.post(`auth/create/order/${userId}`);
         const order = response.data;
         console.log('Order ID:', order.id);
-        // this.$router.push( { id: order.id }  );
         this.$router.push(`/order/${order.id}`);
     } catch (error) {
         console.error('Failed to create order:', error);

@@ -34,14 +34,6 @@ public class MainController {
     public ResponseEntity getBaskets(){
         return ResponseEntity.ok(dataAccessLayer.getBaskets());
     }
-    @GetMapping("/get/discount/{id}")
-    public ResponseEntity getDiscountById(@PathVariable("id") long id){
-        return ResponseEntity.ok(dataAccessLayer.getDiscountById(id));
-    }
-    @GetMapping("/get/discounts")
-    public ResponseEntity getDiscounts(){
-        return ResponseEntity.ok(dataAccessLayer.getDiscounts());
-    }
     @GetMapping("/get/order/{id}")
     public ResponseEntity getOrderById(@PathVariable("id") long id){
         return ResponseEntity.ok(dataAccessLayer.getOrderById(id));
@@ -50,20 +42,5 @@ public class MainController {
     public ResponseEntity getOrders(){
         return ResponseEntity.ok(dataAccessLayer.getOrders());
     }
-    @GetMapping("/get/point/{id}")
-    public ResponseEntity getPointById(@PathVariable("id") long id){
-        return ResponseEntity.ok(dataAccessLayer.getPointById(id));
-    }
-    @GetMapping("/get/points")
-    public ResponseEntity getPoints(){
-        return ResponseEntity.ok(dataAccessLayer.getPoints());
-    }
-    @GetMapping("/get/review/{id}")
-    public ResponseEntity getReviewById(@PathVariable("id") long id){
-        return ResponseEntity.ok(dataAccessLayer.getReviewById(id));
-    }
-    @GetMapping("/get/reviews")
-    public ResponseEntity getReviews(){
-        return ResponseEntity.ok(dataAccessLayer.getReviews());
-    }
+
 }

@@ -6,6 +6,7 @@ import com.example.ElectroStore.dto.SigninRequest;
 import com.example.ElectroStore.dto.SignupRequest;
 import com.example.ElectroStore.models.Basket;
 import com.example.ElectroStore.models.Discount;
+import com.example.ElectroStore.models.Order;
 import com.example.ElectroStore.models.Product;
 import com.example.ElectroStore.security.JwtCore;
 import com.example.ElectroStore.service.UserDetailsServiceImpl;
@@ -82,11 +83,6 @@ public class SecurityController {
     public ResponseEntity getProducts(){
         return ResponseEntity.ok(dataAccessLayer.getProducts());
     }
-    @PostMapping("/create/discount")
-    public ResponseEntity createDiscount(@RequestBody Discount discount){
-        dataAccessLayer.createDiscount(discount);
-        return ResponseEntity.ok("Discount added successfully!");
-    }
 
     @GetMapping("/get/baskets/{userId}")
     public ResponseEntity<List<Basket>> getBasketsByUserId(@PathVariable("userId") long userId) {
@@ -96,5 +92,10 @@ public class SecurityController {
     public ResponseEntity<String> createUser(@RequestBody Basket basket) {
         dataAccessLayer.createBasket(basket);
         return ResponseEntity.ok("Basket added successfully!");
+    }
+    @PostMapping("/create/order")
+    public ResponseEntity createOreder(@RequestBody Order order){
+        dataAccessLayer.createOrder(order);
+        return ResponseEntity.ok("Order added successfully!");
     }
 }

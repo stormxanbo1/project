@@ -46,7 +46,7 @@ export default {
             const orderId = this.$route.params.orderId;
             if (orderId) {
                 try {
-                    const response = await Api.get(`secured/get/order/${orderId}`);
+                    const response = await Api.get(`unauthorized/get/order/${orderId}`);
                     this.order = response.data;
                 } catch (error) {
                     console.error('Failed to load order:', error);

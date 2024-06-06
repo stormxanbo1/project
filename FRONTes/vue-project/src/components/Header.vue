@@ -8,10 +8,10 @@
         <router-link to="/home" class="btn btn-outline-light mx-2">Главная</router-link>
         <router-link to="/cart" class="btn btn-outline-light mx-2">Корзина</router-link>
         <router-link to="/profile" class="btn btn-outline-light mx-2">Профиль</router-link>
+        
       </nav>
     </header>
     <main class="content">
-      <slot></slot>
     </main>
   </div>
 </template>
@@ -31,18 +31,17 @@ export default {
 </script>
 
 <style scoped>
-html,
-body,
-#app {
+html, body, #app {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .page-container {
-  padding: 0 0 0 ;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 header {
@@ -51,6 +50,7 @@ header {
   color: #fff;
   padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
 }
 
 h1 {
@@ -65,5 +65,6 @@ nav .btn {
   flex: 1;
   padding: 20px;
 }
+
 
 </style>

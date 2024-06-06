@@ -50,21 +50,6 @@ public class AdminController {
         return ResponseEntity.ok("Basket updated successfully!");
     }
 
-    @DeleteMapping("/delete/discount/{id}")
-    public ResponseEntity deleteDiscountById(@PathVariable("id") long id){
-        dataAccessLayer.deleteDiscountById(id);
-        return ResponseEntity.ok("Discount deleted successfully!");
-    }
-    @PutMapping("/update/discount/{id}")
-    public ResponseEntity updateDiscountById(@PathVariable("id") long id, @RequestBody Discount updatedDiscount){
-        dataAccessLayer.updateDiscount(id, updatedDiscount);
-        return ResponseEntity.ok("Discount updated successfully!");
-    }
-    @PostMapping("/create/order")
-    public ResponseEntity createOreder(@RequestBody Order order){
-        dataAccessLayer.createOrder(order);
-        return ResponseEntity.ok("Order added successfully!");
-    }
     @DeleteMapping("/delete/order/{id}")
     public ResponseEntity deleteOrderById(@PathVariable("id") long id){
         dataAccessLayer.deleteOrderById(id);
@@ -74,35 +59,5 @@ public class AdminController {
     public ResponseEntity updateOrderById(@PathVariable("id") long id, @RequestBody Order updatedOrder){
         dataAccessLayer.updateOrder(id, updatedOrder);
         return ResponseEntity.ok("Order updated successfully!");
-    }
-    @PostMapping("/create/point")
-    public ResponseEntity createPoint(@RequestBody Point point){
-        dataAccessLayer.createPoint(point);
-        return ResponseEntity.ok("Point added successfully!");
-    }
-    @DeleteMapping("/delete/point/{id}")
-    public ResponseEntity deletePointById(@PathVariable("id") long id){
-        dataAccessLayer.deletePointById(id);
-        return ResponseEntity.ok("Point deleted successfully!");
-    }
-    @PutMapping("/update/point/{id}")
-    public ResponseEntity updatePointById(@PathVariable("id") long id, @RequestBody Point updatedPoint){
-        dataAccessLayer.updatePoint(id, updatedPoint);
-        return ResponseEntity.ok("Point updated successfully!");
-    }
-    @PostMapping("/create/review")
-    public ResponseEntity createReview(@RequestBody Review review){
-        dataAccessLayer.createReview(review);
-        return ResponseEntity.ok("Review added successfully!");
-    }
-    @DeleteMapping("/delete/review/{id}")
-    public ResponseEntity deleteReviewById(@PathVariable("id") long id){
-        dataAccessLayer.deleteReviewById(id);
-        return ResponseEntity.ok("Review deleted successfully!");
-    }
-    @PutMapping("/update/review/{id}")
-    public ResponseEntity updateReviewById(@PathVariable("id") long id, @RequestBody Review updatedReview){
-        dataAccessLayer.updateReview(id, updatedReview);
-        return ResponseEntity.ok("Review updated successfully!");
     }
 }
